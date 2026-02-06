@@ -13,10 +13,23 @@
             "node": {
                 "sourceMaps": true
             }
-            // "node": {
-            //     "remoteRoot": "/src",
-            //     "localRoot": "${workspaceFolder}/src"
-            // }       
+        },
+        {
+            "name": "Dev Container Launch",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/app.ts",
+            "preLaunchTask": "typescript",
+            "outFiles": [
+                "${workspaceFolder}/src/**/*.js"
+            ],
+            "sourceMaps": true,
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "envFile": "${workspaceFolder}/.env.development.local"
         }
     ]
 }
